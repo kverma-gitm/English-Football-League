@@ -1,0 +1,83 @@
+<div>  
+ <section class="features" id="epl2015"  > 
+      <div class="container">
+      <div ng-click="2015=true" >
+        <h2 > 
+          Matches 2015 
+        </h2> 
+        </div>
+          <div ng-show="2015" ng-click="myVar=true" class="col-md-10" ng-repeat='round in firstctrl.firstJsonRounds' style="cursor: pointer;">
+		  <div style="color: black"!important> 
+          <h3>{{round.name}}</h3><br></div> 
+
+
+          <div ng-show="myVar" class="col-md-10" ng-repeat="item in round['matches']"> 
+  		  <a ng-click="myVar1=true" style="text-decoration-color: black" ><h4 style="text-align: center">{{item.team1.code}} Vs {{item.team2.code}}</a></h4>
+  		 
+
+
+  		  <div ng-show="myVar1">
+  		  <h4 style="color:black;text-align: center">
+  		   <table class="table table-bordered table-striped table-hover ">
+  		   <thead>
+  		   <td>Date</td>
+  		   
+  		   
+  		   <td>{{item.date}}</td>
+  		   </thead>
+   		  <thead>
+
+  		   <td>Team A</td>
+   		  <td>{{item.team1.name}}</td>
+   		  </thead>
+
+   		  <thead>
+  		   <td>Team A Score</td>
+   		  <td>
+   		  {{item.score1}}</td>
+   		  </thead>
+
+   		  <thead>
+  		   <td>Team B</td>
+   		  <td>{{item.team2.name}}</td>
+   		  </thead>
+
+   		  <thead>
+  		   <td>Team B Score</td>
+   		  <td>{{item.score2}}
+   		  </td>
+   		  </tr>
+   		  </table>
+   		  </h4>
+   		  </div>
+   		  </div>
+   		  </div>
+   		  </section>
+
+<div id="epl2016">
+<section class="features"   >
+   		  <div class="container"> 
+        <h2 class="text-center">
+   		  	Matches 2016
+   		  	</h2>
+   		   <div ng-click="myVar2=true" class="col-md-10" ng-repeat='round2 in firstctrl.secondJsonRounds' style="cursor: pointer;">
+		  <div style="color: black"!important> 
+          <h3>{{round2.name}}</h3><br></div> 
+
+
+          <div ng-show="myVar2" class="col-md-10" ng-repeat="item2 in round2['matches']"> 
+  		  <a ng-click="myVar3=true" style="text-decoration-color: black" ><h4 style="text-align: center">{{item2.team1.code}} Vs {{item2.team2.code}}</a></h4>
+  		  
+  		  
+
+
+  		  <div ng-show="myVar3">
+   		  <h4 style="color:black;text-align: center">Date={{item2.date}}<br>{{item2.team1.name}}={{item2.score1}}<br>{{item2.team2.name}}={{item2.score2}}</a></h4>
+   		  </div>
+   		</div>
+  		</div>
+  	 
+  		</div>
+  		</section>
+  		</div>
+      <div class="text-center"><hr><a href="#/" class="btn btn-primary btn-primary"></span> Go To Homepage</a> <br></div>

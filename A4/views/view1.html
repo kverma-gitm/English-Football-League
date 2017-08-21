@@ -1,0 +1,71 @@
+<section class="appSection">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                
+                    <h1 style="color:rgb(56, 0, 60)">English Premier League Matches</h1>
+                    <!-- filters start -->
+                    <div class= "container" style="padding-top: 5%">
+                    	<div  class=" col-xs-4">
+                    	<label>Filter by Name:</label><br>
+                    	
+                    	</div>
+
+                    	<div class=" col-xs-4">
+                    	<label>Filter by Score:</label>
+                    	</div>
+
+                    	<div class=" col-xs-4">
+                    	<label>Filter by Year</label>
+                    	</div>
+                    	</div>
+
+                    	<div class= "container" style="padding-bottom:5%">
+                    	<div  class=" col-xs-4">
+                    	<input type="text" class=" form-control " ng-model="searchTeam"  placeholder="Enter Team Name" />
+                    	</div>
+
+                    	<div  class=" col-xs-4">
+                    	<input type="text" class="form-control "  ng-model="searchByScore1.score1" placeholder="Enter Score" /> 
+                    	</div>
+                    	
+
+                    	<div  class=" col-xs-4">
+                    	<input type="text" class="form-control " ng-model="searchByYear"  placeholder="Enter Year" />
+                    	</div>
+                    	
+                    	</div>
+
+                    
+                        
+                            
+                    <!-- filters end -->
+
+
+				 
+<div  style="color:black;">
+
+         
+          <div class = "container" class="col-md-12" ng-repeat='round in firstctrl.combinedData '> 
+          <div ng-repeat="match in round.matches  | filter:searchTeam | filter:searchByScore1 | filter:searchByScore2 | filter:searchByYear" style="text-align:center;">
+          <div style="text-align:left;">Date:{{ match.date | date: "fullDate" }}</div>
+          <h3>{{round.name}}<br></h3>
+          <h4 style="text-align: center;">
+          <div style="padding-bottom: 1%"> <a ng-href="#/info/{{ match.team1.code }}/{{ match.team1.key }}" title="View Team Statistics">{{ match.team1.name }}</a>
+                <br></div>
+                VS <br>
+        <div style="padding-top: 1%"><a ng-href="#/info/{{ match.team2.code }}/{{ match.team2.key }}" title="View Team Statistics">{{ match.team2.name }}</a>
+                <br></h4></div>
+ </div>
+ </div>         
+  			
+                              
+
+               
+                <div>
+                    <!-- col end -->
+                </div>
+                <!--  row end -->
+            </div>
+            <!-- conteiner -->
+</section>
